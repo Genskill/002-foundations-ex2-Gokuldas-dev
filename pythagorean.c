@@ -1,39 +1,29 @@
-#include <stdio.h>
-#include <cs50.h>
-
-int main(void) {
-  float a1=get_float("side 1 ");
-  float a2=get_float("side 2 ");
-  float a3=get_float("side 3 ");
-  
-  float largest;
-  float other1, other2;
-  
-  if (a1>a2) {
-    if (a1 > a3) {
-      largest = a1;
-      other1 = a2;
-      other2 = a3;
-    } else {
-      largest = a3;
-      other1 = a1;
-      other2 = a2;
-    }
-  } else {
-    if (a2 > a3) {
-      largest = a2;
-      other1 = a1;
-      other2 = a3;
-    } else {
-      largest = a3;
-      other1 = a1;
-      other2 = a2;
-    }
-  }
-    
-  if (largest*largest == other1*other1 + other2*other2) {
-    printf("Yes\n");
-  } else {
-    printf("No\n");
-  }
-}
+#include<stdio.h>
+#include<cs50.h>
+int main(void)
+{
+	float s1=get_float("side 1 ");
+	float s2=get_float("side 2 ");
+	float s3=get_float("side 3 ");
+	if(s1>s2 && s1>s3)
+		{
+			if(s2*s2+s3*s3==s1*s1)
+			printf("Yes");
+			else
+			printf("No");
+		}
+	if(s2>s3 && s2>s1)
+		{
+			if(s1*s1+s3*s3==s2*s2)
+			printf("Yes");
+			else
+			printf("No");
+		}
+	else
+		{	if(s1*s1+s2*s2==s3*s3)
+			printf("Yes");
+			else
+			printf("No");
+		}
+};
+	
